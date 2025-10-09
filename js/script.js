@@ -76,58 +76,76 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  jenisPenelitian.addEventListener("change", () => {
-    const v = jenisPenelitian.value;
-    extraFields.innerHTML = "";
+jenisPenelitian.addEventListener("change", () => {
+  const v = jenisPenelitian.value;
+  extraFields.innerHTML = "";
 
-    if (v === "paper") {
-      extraFields.innerHTML = `
-        <fieldset style="border:1px solid #cfcfcf;padding:12px;border-radius:4px">
-          <legend style="font-weight:600;padding:0 6px">Paper</legend>
+  if (v === "paper") {
+    extraFields.innerHTML = `
+      <fieldset style="border:1px solid #cfcfcf;padding:12px;border-radius:4px">
+        <legend style="font-weight:600;padding:0 6px">Paper</legend>
 
+        <div class="form-row">
           <label for="namaPenulisPaper">Nama Penulis:</label>
           <input type="text" id="namaPenulisPaper" name="namaPenulisPaper" placeholder="Nama Penulis" required />
+        </div>
 
+        <div class="form-row">
           <label for="judulPaper">Judul Paper:</label>
           <input type="text" id="judulPaper" name="judulPaper" placeholder="Judul Paper" required />
+        </div>
 
+        <div class="form-row">
           <label for="tahunPaper">Tahun Publikasi:</label>
           <input type="text" id="tahunPaper" name="tahunPaper" placeholder="Tahun Publikasi (mis. 2024)" inputmode="numeric" required />
+        </div>
 
+        <div class="form-row">
           <label for="volPaper">Volume, Edisi, Halaman:</label>
           <input type="text" id="volPaper" name="volPaper" placeholder="Vol/No/Edisi/Halaman" required />
+        </div>
 
+        <div class="form-row">
           <label for="doiPaper">Digital Object Identifier (DOI):</label>
           <input type="text" id="doiPaper" name="doiPaper" placeholder="10.xxxx/xxxx" required />
-        </fieldset>
-      `;
-    } else if (v === "buku") {
-      extraFields.innerHTML = `
-        <fieldset style="border:1px solid #cfcfcf;padding:12px;border-radius:4px">
-          <legend style="font-weight:600;padding:0 6px">Buku</legend>
+        </div>
+      </fieldset>
+    `;
+  } else if (v === "buku") {
+    extraFields.innerHTML = `
+      <fieldset style="border:1px solid #cfcfcf;padding:12px;border-radius:4px">
+        <legend style="font-weight:600;padding:0 6px">Buku</legend>
 
+        <div class="form-row">
           <label for="namaPenulisBuku">Nama Penulis Buku:</label>
           <input type="text" id="namaPenulisBuku" name="namaPenulisBuku" placeholder="Nama Penulis Buku" required />
-
+        </div>
+        
+        <div class="form-row">
           <label for="judulBuku">Judul Buku:</label>
           <input type="text" id="judulBuku" name="judulBuku" placeholder="Judul Buku" required />
+        </div>
 
+        <div class="form-row">
           <label for="tahunBuku">Tahun Publikasi Buku:</label>
           <input type="text" id="tahunBuku" name="tahunBuku" placeholder="Tahun Publikasi (mis. 2021)" inputmode="numeric" required />
+        </div>
 
+        <div class="form-row">
           <label for="volBuku">Volume, Edisi, Halaman:</label>
-          <input type="text" id="volBuku" name="volBuku" placeholder="Vol/No/Edisi/Halaman" required />
+          <input type="text" id="volBuku" name="volBuku" placeholder="Volume Buku" required />
+        </div>
 
+        <div class="form-row">
           <label for="isbnBuku">ISBN:</label>
           <input type="text" id="isbnBuku" name="isbnBuku" placeholder="ISBN" required />
-        </fieldset>
-      `;
-    } else if (v === "jurnal") {
-      extraFields.innerHTML = "";
-    } else {
-      extraFields.innerHTML = "";
-    }
-  });
+        </div>
+      </fieldset>
+    `;
+  } else {
+    extraFields.innerHTML = "";
+  }
+});
 
   function isDigitsOnly(val) {
     return /^[0-9]+$/.test(val);
