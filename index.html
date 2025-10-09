@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ujian Tengah Semester Pemrograman Web</title>
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <p>
+        Ini adalah Ujian Tengah Semester Pemrograman Web.
+        <a href="https://www.upnvj.ac.id" target="_blank">
+          Klik ini untuk ke laman Fakultas Ilmu Komputer UPN Veteran Jakarta →
+        </a>
+      </p>
+    </div>
+  </header>
+
+  <div class="top-banner">
+    <div class="container banner-container">
+      <img src="img/logo.png" alt="Logo UPNVJ" class="banner-logo">
+      <p class="banner-text">
+        Sistem Pustaka Digital Ilmu Komputer Universitas Pembangunan Nasional Veteran Jakarta.
+      </p>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-left">
+        <h1 class="headline-navy">Selamat Datang pada Sistem Pustaka Digital</h1>
+        <h1 class="headline-highlight">
+          Fakultas Ilmu Komputer
+          <span class="lightblue">UPN Veteran Jakarta</span>
+        </h1>
+
+        <div class="hero-buttons">
+          <button id="btnMulai" class="btn-primary" type="button">Mulai Melakukan Pengisian</button>
+          <button id="btnDaftar" class="btn-secondary" type="button">Daftar Diri</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="img/FIK.png" alt="FIK" class="fik-image" />
+      </div>
+    </div>
+  </section>
+
+  <div id="modalMulai" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="close-icon" id="closeMulai" aria-label="Tutup">&times;</button>
+      <h2>Formulir Pengisian Penelitian</h2>
+
+      <form id="formPenelitian" novalidate>
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required />
+
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" inputmode="numeric" required />
+
+        <label for="angkatan">Angkatan:</label>
+        <input type="text" id="angkatan" name="angkatan" placeholder="Masukkan tahun angkatan (mis. 2023)" inputmode="numeric" required />
+
+        <label for="semester">Semester:</label>
+        <input type="number" id="semester" name="semester" placeholder="Masukkan semester sekarang" min="1" required />
+
+        <label for="jenisPenelitian">Pilih Penelitian:</label>
+        <select id="jenisPenelitian" name="jenisPenelitian" required>
+          <option value="">-- Pilih Jenis Penelitian --</option>
+          <option value="paper">Paper</option>
+          <option value="buku">Buku</option>
+          <option value="jurnal">Jurnal Pengabdian</option>
+        </select>
+
+        <div id="extraFields" class="extra-fields" aria-live="polite"></div>
+
+        <div class="modal-buttons">
+          <button type="submit" class="btn-primary">Submit</button>
+          <button type="button" id="btnKembaliMulai" class="btn-secondary">Kembali</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modalDaftar" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="close-icon" id="closeDaftar" aria-label="Tutup">&times;</button>
+      <h2>Data Mahasiswa</h2>
+      <p><strong>Nama:</strong> Muhammad Sayyid Rafee’ Djamil</p>
+      <p><strong>NIM:</strong> 2410512078</p>
+      <p><strong>Program Studi:</strong> S1 - Sistem Informasi</p>
+      <p class="note">Ujian Tengah Semester Praktikum Pemrograman Web</p>
+
+      <div class="modal-buttons">
+        <button id="btnKembaliDaftar" class="btn-secondary" type="button">Kembali</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
